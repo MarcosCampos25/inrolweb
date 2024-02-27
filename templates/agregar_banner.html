@@ -1,0 +1,21 @@
+{% extends "video-tiktok.html" %}
+{% block title %}Página de Inicio{% endblock %}
+
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.imagen.label }}<br>
+      {{ form.imagen() }}<br>
+    </p>
+    <p>
+      {{ form.alt.label }}<br>
+      {{ form.alt(rows=4) }}<br>
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+
+
+{% endblock %}

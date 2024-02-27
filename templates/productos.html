@@ -1,0 +1,42 @@
+{% extends "video-tiktok.html" %}
+{% block title %}Página de Inicio{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="../static/styles/style_producto.css">
+
+<div class="contenedor">
+    <div class="galeria">
+        <div class="miniaturas">
+            {% for imagen in imagenes %}
+                <img src="{{ url_for('static', filename='images/productos/miniaturas/' + imagen.ruta) }}" alt="Miniatura 1" class="miniatura">
+            {% endfor %}
+            <!-- Añade más miniaturas según necesites -->
+        </div>
+        <div class="imagen-producto">
+            <img src="{{ url_for('static', filename='images/productos/' + productos.imagen_url) }}" alt="Producto 1" class="imagen-activa">
+            <img src="../static/images/rightarrow_80815.svg" alt="Anterior" class="flecha anterior"> 
+            <img src="../static/images/rightarrow_80815.svg" alt="Siguiente" class="flecha siguiente">
+        </div>
+    </div>
+    <div class="info-producto">
+        <h1>{{ productos.nombre }}</h1>
+        <div style="background-color: rgba(255, 255, 255, 0.49);">
+            <p>{{ productos.parrafo_descripcion_1 }}</p>
+            <p>{{ productos.parrafo_descripcion_2 }}</p>
+        </div>
+        <p>Precio: ${{productos.precio}}</p>
+        <button>Comprar</button>
+    </div>
+
+
+    <script>
+        var productos = {{ productos | tojson }};
+        console.log(productos)
+
+        var miniatura = {{ imagenes | tojson }};
+        console.log(miniatura)
+    </script>
+</div>
+
+{% endblock %}

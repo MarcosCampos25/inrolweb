@@ -1,0 +1,64 @@
+{% extends "video-tiktok.html" %}
+{% block title %}Página de Inicio{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="../static/styles/style_carrusel.css">
+<link rel="stylesheet" href="../static/styles/style_cuardos.css">
+<link rel="stylesheet" href="../static/styles/style-base.css">
+<link rel="stylesheet" href="../static/styles/style-pie.css">
+<link href="https://fonts.cdnfonts.com/css/tilt-warp" rel="stylesheet">
+
+<div id="carousel" class="carousel">
+    <div class="carousel__images">
+      {% for banner in banners %}
+      <img src="{{ url_for('static', filename='images/banners/' + banner.url) }}" alt="{{ banner.alt }}" class="carousel__image">
+      {% endfor %}
+      <!-- Agrega más imágenes según sea necesario -->
+    </div>
+    
+    <button class="carousel__button carousel__button--left">&lt;</button>
+    <button class="carousel__button carousel__button--right">&gt;</button>
+    <div class="carousel__indicators">
+      <!-- Los indicadores se generan mediante JavaScript -->
+    </div>
+</div>
+
+<div class="header-container">
+  <h1>Neceser de maquillaje destacados</h1>
+  <h2>Guarda todo tu maquilaje en nuestras increibles bolsas de maquillaje</h2>
+</div>
+
+<div class="products">
+    {% for producto in productos %}
+<div class="product">
+    <div class="product__image" onclick="verProducto({{ producto.id }})" style="background-image: url({{ url_for('static', filename='images/productos/' + producto.imagen_url) }});" title="{{ producto.imagen_alt }}" ></div>
+    <div class="product__info" onclick="verProducto({{ producto.id }})">
+        <h2>{{ producto.nombre }}</h2>
+        <p>{{ producto.descripcion }}</p>
+        <button class="btn" onclick="verProducto({{ producto.id }})">VER</button>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+<script>
+    function verProducto(id) {
+      window.location.href = "/ver-producto/" + id;
+      return
+    }
+</script>
+
+<div class="header-container width-video">
+  <h2>Nuestros productos en accion</h2>
+</div>
+
+
+
+{{ super ()}}
+<div class="header-container carrusel-frases">
+  <h1 id="carrusel__frases">Conoce los productos destacados</h1>
+</div>
+<script src="../static/js/carrusel_banner.js"></script>
+<script src="../static/js/carrusel_frases.js"></script>
+{% endblock %}

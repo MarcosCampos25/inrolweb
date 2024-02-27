@@ -1,0 +1,120 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1225px;
+    margin: 20px auto;
+  }
+
+
+.header-container {
+  color: #000000;
+  max-width: 1200px;
+  background-color: #f9d6d591;
+  border: dashed;
+  text-align: center;
+  margin: 20px auto;
+  font-family: 'Caviar Dreams', sans-serif;                            
+}
+@media (max-width: 450px) {
+ .header-container {
+  aspect-ratio: 1625/662;
+  }
+}
+.width-video {
+  max-width: 390px;
+  font-size: 16px;
+}
+
+
+
+.product {
+  flex-basis: calc(33.333% - 20px);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin: 0 10px 20px; /* Agregamos un margen inferior para separar los productos verticalmente */
+}
+
+.product__image {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.product:hover .product__image {
+  transform: scale(1.1);
+}
+
+.product__info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+}
+
+.product__info h2, .product__info p{
+  font-family: 'Caviar Dreams', sans-serif;                                            
+  margin: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Consulta de medios para dispositivos móviles */
+@media (max-width: 767px) {
+  .products {
+    justify-content: center;
+  }
+
+  .product {
+    flex-basis: 100%;
+    margin: 0 0 20px; /* El margen derecho e izquierdo es 0 para dispositivos móviles */
+  }
+}
+
+
+
+@keyframes rainbow-text {
+  0% {color: #c93384;}
+  14% {color: #e44f9c;}
+  28% {color: #ff69b4;}
+  42% {color: #f70da1;}
+  57% {color: #f258f2;}
+  71% {color: #f70071;}
+  85% {color: #ff1b82;}
+  100% {color: #ff5aa4;}
+}
+
+
+.header-container h1, .header-container h3 {
+  font-size: 2em;
+  text-align: center;
+  -webkit-background-clip: text;
+    background-clip: text;
+  color: transparent;
+  animation: rainbow-text 10s ease infinite;
+  opacity: 1; /* Asegúrate de que el texto sea totalmente opaco al inicio */
+  transition: opacity 1s ease-in-out; /* Suaviza la transición de la opacidad */
+}
+.header-container {
+  animation: rainbow-text;
+}
+
+

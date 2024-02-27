@@ -1,0 +1,57 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Ajusta según tus necesidades */
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .carousel__images {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel__image {
+    width: 100%;
+    display: block;
+    aspect-ratio: 27/13;
+  }
+  
+  .carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .carousel__button--left {
+    left: 0;
+  }
+  
+  .carousel__button--right {
+    right: 0;
+  }
+  
+  .carousel__indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  .carousel__indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel__indicator--active {
+    background-color: #333;
+  }
+  

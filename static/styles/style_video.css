@@ -1,0 +1,89 @@
+.video-wrapper {
+  position: relative;
+  width: 100%; /* Ajusta esto según necesites */
+  max-width: 390px; /* Máximo ancho del video */
+  max-height: 680px;
+  margin: auto; /* Para centrar el contenedor */
+  margin-bottom: 2em;
+}
+
+.video-container {
+  display: block; /* Asegura que el video no tenga espacio extra debajo */
+  width: 100%; /* Hace que el video sea responsive */
+  height: auto; /* Mantiene la relación de aspecto */
+  border: solid 0.5px;
+  box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+  transition: transform 0.8s ease, opacity 0.8s ease; /* Aplica una transición suave a la propiedad de transformación */
+  aspect-ratio: 9/16;
+}
+
+
+
+
+.transladar-derecha {
+  transform: translate(20px);
+  opacity: 0; /* Hace que el objeto tenga una opacidad de 0 */
+}
+
+.transladar-izquierda {
+  transform: translate(-20px);
+  opacity: 0; /* Hace que el objeto tenga una opacidad de 0 */
+}
+
+
+
+.play-pause-btn {
+  position: absolute;
+  top: 95.5%;
+  left: 52.55%;
+  transform: translate(-50%, -50%); /* Centra el botón perfectamente */
+  cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
+  z-index: 10; /* Asegura que el botón esté sobre el video */
+  transition: scale 0.5s ease
+}
+
+svg {
+  scale: 1.18;
+}
+
+
+.play-pause-btn:hover {
+  scale: 1.05;
+}
+
+.boton-anterior{
+  transform: rotate(-180deg);
+  left: 2%;
+}
+.boton-siguiente {
+  left: 90%;
+}
+
+.boton-video {
+  filter: invert(92%) sepia(64%) saturate(3972%) hue-rotate(213deg) brightness(104%) contrast(105%);
+  width: 32px;
+  height: 32px;
+  bottom: 0;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease
+}
+
+.boton-siguiente:hover{
+  transform: translateX(3px);
+}
+
+.boton-anterior:hover {
+  transform: translateX(-3px) rotate(180deg)
+}
+
+.add-opacity {
+  opacity: 0;
+}
+
+.boton-video svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

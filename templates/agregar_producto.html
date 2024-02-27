@@ -1,0 +1,53 @@
+{% extends "video-tiktok.html" %}
+{% block title %}Página de Inicio{% endblock %}
+
+
+{% block content %}
+
+
+<form method="post" enctype="multipart/form-data" style="margin-left: 25px;">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.nombre.label }}<br>
+      {{ form.nombre(size=32) }}<br>
+    </p>
+    <p>
+      {{ form.descripcion.label }}<br>
+      {{ form.descripcion(rows=4) }}<br>
+    </p>
+    <p>
+      {{ form.imagen.label }}<br>
+      {{ form.imagen() }}<br>
+    </p>
+    <p>
+      {{ form.imagen_alt.label }}<br>
+      {{ form.imagen_alt(rows=4) }}<br>
+    </p>
+    <p>
+      {{ form.parrafo_descripcion_1.label }}<br>
+      {{ form.parrafo_descripcion_1(rows=4) }}<br>
+    </p>
+    <p>
+      {{ form.parrafo_descripcion_2.label }}<br>
+      {{ form.parrafo_descripcion_2(rows=4) }}<br>
+    </p>
+    <p>
+      {{ form.precio.label }}<br>
+      {{ form.precio(size=4) }}<br>
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+  
+  <style>
+    textarea {
+      width: 50vw;
+    }
+
+    input {
+      width: 20vw;
+    }
+
+  </style>
+
+
+  {% endblock %}

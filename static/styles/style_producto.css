@@ -1,0 +1,133 @@
+.contenedor {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.galeria { 
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan según sea necesario */
+}
+
+.flecha {
+    background-color: rgba(255, 255, 255, 0.541);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centra las flechas verticalmente */
+    cursor: pointer; /* Indica que se pueden clickear */
+    transition: transform 0.3s ease
+}
+
+.anterior {
+    z-index: 1; /* Asegura que la flecha esté sobre la imagen */
+    left: 0;
+    margin-left: 15px;
+    transform: rotate(180deg)
+}
+
+.anterior:hover {
+    transform: translateX(-3px) rotate(180deg)
+}
+
+.siguiente {
+    z-index: 1;
+    right: 0;
+    margin-right: 15px;
+    margin-top: 1.55vh;
+}
+
+.siguiente:hover {
+    transform: translateX(3px) translateY(-50%);
+}
+
+.miniaturas {
+    display: flex;
+    flex-direction: column;
+}
+
+.miniatura {
+    max-width: 80px; /* Ajusta según necesites */
+    max-height: 80px; /* Asegúrate de mantener la proporción */
+    object-fit: cover;
+    margin-bottom: 10px; /* Espacio entre miniaturas */
+    cursor: pointer; /* Cambia el cursor para indicar que son clicables */
+}
+
+.imagen-activa {
+    max-width: 400px; /* Ajusta este valor según el tamaño deseado de tus imágenes */
+    margin: 0 10px; /* Asegura espacio a ambos lados */
+}
+
+.info-producto {
+    max-width: 400px;
+    margin-left: 20px; /* Espacio entre la imagen y la información del producto */
+}
+
+.imagen-producto {
+    position: relative;
+}
+
+/* Estilos existentes */
+
+/* Media query para pantallas menores de 768px */
+@media (max-width: 900px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    .galeria {
+        flex-direction: column;
+    }
+
+    .miniaturas {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .miniatura {
+        margin-right: 5px; /* Añadir espacio entre miniaturas */
+    }
+
+    .imagen-activa {
+        max-width: 100%; /* Hace que la imagen principal sea completamente responsive */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+    .info-producto {
+        max-width: 90%; /* Aumenta el ancho para aprovechar más espacio */
+        margin: 20px 0; /* Añadir un poco de espacio arriba y abajo */
+    }
+
+    .flecha {
+        width: 20px; /* Ajustar el tamaño de las flechas */
+        height: 20px;
+    }
+
+    .anterior, .siguiente {
+        margin-top: 0;
+    }
+}
+
+/* Media query para pantallas menores de 480px */
+@media (max-width: 480px) {
+    .imagen-activa, .info-producto {
+        max-width: 100%; /* Aprovechar al máximo el ancho disponible */
+        margin-inline: 0;
+    }
+
+    .flecha {
+        width: 18px; /* Ajustar el tamaño de las flechas un poco más */
+        height: 18px;
+    }
+    
+    .info-producto {
+        margin-left: 15px;
+    }
+}

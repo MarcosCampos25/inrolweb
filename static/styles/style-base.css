@@ -1,0 +1,165 @@
+body, html {
+  font-family: 'Caviar Dreams', sans-serif;                                         
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/fondo_canvahd.png');
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+.navegacion {
+  background-color: #e455c363;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.navegacion .menu {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 5em;
+}
+
+.navegacion a {
+  color: rgb(0, 0, 0);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navegacion a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#toggle {
+  display: none;
+}
+
+#icon-toggle {
+display: none;
+}
+
+@media (max-width: 768px) {
+  #icon-toggle {
+    display: block;
+  }
+  .navegacion .menu {
+    gap: 1em;
+  }
+  .navegacion .menu a:not(:first-child) {
+    display: none;
+  }
+  .navegacion .menu a {
+    display: block;
+    text-align: left;
+  }
+  .navegacion label {
+    display: block;
+    cursor: pointer;
+    color: white;
+    padding: 14px 20px;
+  }
+  #toggle:checked + .menu a {
+    display: block;
+  }
+}
+
+.navegacion > div {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .navegacion label {
+    display: block;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    text-align: left;
+  }
+
+  #toggle:checked + div .menu, .menu a {
+    display: block;
+    max-height: 500px;
+  }
+
+  .menu a:not(:first-child) {
+    display: none;
+  }
+
+  #toggle:checked + div .menu a {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.footer {
+  background-color: #f9d6d5a3;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: auto;
+}
+.footer a {
+  color: rgb(0, 0, 0);
+  margin: 0 10px;
+  
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.social-icons {
+  margin: 20px 0;
+}
+
+
+.btn-wsp{
+  position:fixed;
+  width:60px;
+  height:60px;
+  line-height: 63px;
+  bottom:25px;
+  right:25px;
+  background:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:35px;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+  z-index:100;
+  transition: all 300ms ease;
+}
+.btn-wsp:hover{
+  background: #20ba5a;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+  .btn-wsp{
+      width:63px;
+      height:63px;
+      line-height: 66px;
+  }
+}

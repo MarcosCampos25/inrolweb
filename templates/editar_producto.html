@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <h1>Editar Producto</h1>
+    <form action="/actualizar_producto/{{ producto.id }}" method="post" enctype="multipart/form-data">
+        <input type="text" name="nombre" value="{{ producto.nombre }}" required>
+        <input type="text" step="any" name="descripcion" value="{{ producto.descripcion }}" required>
+        <input type="file" name="imagen"  id="imagen">
+        <!-- Agrega más campos según sea necesario -->
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>
